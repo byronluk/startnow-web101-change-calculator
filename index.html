@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Change Calculator</title>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <!-- <style>
+    img {
+      opacity: 100;
+      position: relative;
+      right: 150px;
+    }
+    p {
+      opacity: 100;
+      position: relative;
+      right: 150px;
+    }
+    </style> -->
+  </head>
+  <body>
+    <!-- Write your markup here -->
+    <div class="container-fluid">
+        <h1 class="text-center">Change Calculator</h1>
+
+        <div class="form-group text-center">
+          <label for="amount-due">Sale Amount</label>
+          <div class="input-group">
+            <div class="input-group-addon">$</div>
+            <input id="amount-due" type="number" placeholder="Amount due" class="form-control" />
+          </div>
+        </div>
+        <div class="form-group text-center">
+          <label for="amount-received">Payment Amount</label>
+          <div class="input-group">
+            <div class="input-group-addon">$</div>
+            <input id="amount-received" type="number" placeholder="Amount received" class="form-control"/>
+          </div>
+        </div>
+        
+          <button id="calculate-change" type="submit" class="btn btn-success btn-lg btn-block">Calculate</button>
+        
+      <div>
+        <div class="row">
+          <div class="col-md-3">
+            <h2 class="text-center">Twenty Dollars</h2>
+            <img src="images/twenty.jpg" alt="Twenty Dollar Bill" class="img-responsive center-block" id="twenty-bill">
+            <p class="lead text-center" id="twenties-output"></p>
+          </div>
+          <div class="col-md-3">
+            <h2 class="text-center">Ten Dollars</h2>
+            <img src="images/ten.jpg" alt="Ten Dollar Bill" class="img-responsive center-block">
+            <p class="lead text-center" id="tens-output"></p>
+          </div>
+          <div class="col-md-3">
+            <h2 class="text-center">Five Dollars</h2>
+            <img src="images/five.jpg" alt="Five Dollar Bill" class="img-responsive center-block">
+            <p class="lead text-center" id="fives-output"></p>
+          </div>
+          <div class="col-md-3">
+            <h2 class="text-center">Dollars</h2>
+            <img src="images/one.jpg" alt="One Dollar Bill" class="img-responsive center-block">
+            <p class="lead text-center" id="dollars-output"></p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">
+            <h2 class="text-center">Quarters</h2>
+            <img src="images/quarter.jpg" alt="One quarter" class="img-responsive center-block">
+            <p class="lead text-center" id ="quarters-output"></p>
+          </div>
+          <div class="col-md-3">
+            <h2 class="text-center">Dimes</h2>
+            <img src="images/dime.png" alt="One dime" class="img-responsive center-block">
+            <p class="lead text-center" id="dimes-output"></p>
+          </div>
+          <div class="col-md-3">
+            <h2 class="text-center">Nickels</h2>
+            <img src="images/nickel.jpg" alt="One nickel" class="img-responsive center-block">
+            <p class="lead text-center" id="nickels-output"></p>
+          </div>
+          <div class="col-md-3">
+            <h2 class="text-center">Pennies</h2>
+            <img src="images/penny.jpg" alt="One penny" class="img-responsive center-block">
+            <p class="lead text-center" id="pennies-output"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Don't forget to add your <script> tag here -->
+      <script src="js/main.js" charset="utf-8"></script>
+  </body> 
+</html>
