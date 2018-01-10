@@ -5,30 +5,31 @@ buttonElement.addEventListener('click', handleClickEvent);
 // Couldn't figure out how to animate images with setInterval
 
 function handleClickEvent(e) {
+    amountCalculate();
     function amountCalculate(constant, amount, element) {
-        let elementArray = ['twenties', 'tens', 'fives', 'dollars', 'quarters', 'dimes', 'nickels', 'pennies'];
-        let amounts = [20, 10, 5, 1, 0.25, 0.10, 0.05, 0.01];
-        let amountDue = document.getElementById('amount-due').value;
-        let amountReceived = document.getElementById('amount-received').value;
-        let changeDue = amountReceived - amountDue;
-        
+        var elementArray = ['twenties', 'tens', 'fives', 'dollars', 'quarters', 'dimes', 'nickels', 'pennies'];
+        var amounts = [20, 10, 5, 1, 0.25, 0.10, 0.05, 0.01];
+        var amountDue = document.getElementById('amount-due').value;
+        var amountReceived = document.getElementById('amount-received').value;
+        var changeDue = amountReceived - amountDue;
         //for loop iterating over array for element name and dollar/coin value const
-        for (var i = 0; i < elementArray.length; i++) {
+        for (let i = 0; i < elementArray.length; i++) {
+            let pElement = document.getElementById(elementArray[i] + '-output');
+            let amountOutput;
+
             if (changeDue >= amounts[i]) {
-                var amountOutput = Math.floor(changeDue / amounts[i]);
                 //dollars due to customer
-                changeDue = changeDue % amounts[i];
-                changeDue = changeDue.toFixed(2);
+                //updating the value of changeDue each iteration
+                amountOutput = Math.floor(changeDue / amounts[i]);
+                changeDue = (changeDue % amounts[i]).toFixed(2);
             }
             else {
-                var amountOutput = 0;
+                amountOutput = 0;
             }
-            var pElement = document.getElementById(elementArray[i] + '-output');
+            //updates each <p> element with current value output
             pElement.textContent = amountOutput;
-            //print value output
         }
     };  
-    amountCalculate();
 
     document.getElementById('amount-due').value = '';
     document.getElementById('amount-received').value = '';
